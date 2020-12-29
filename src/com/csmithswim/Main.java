@@ -13,8 +13,17 @@ class Node{
 class Main{
 
     public static int getHeight(Node root){
+    if (root == null)
+        return -1;
+    else {
+        int lDepth = getHeight(root.left);
+        int rDepth = getHeight(root.right);
 
-        //Write your code here
+        if (lDepth > rDepth)
+            return (lDepth+1);
+        else
+            return (rDepth+1);
+        }
 
     }
 
